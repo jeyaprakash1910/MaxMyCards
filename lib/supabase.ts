@@ -5,6 +5,10 @@ import * as SecureStore from 'expo-secure-store';
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
 const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
 
+// Debug: Log environment variables (remove in production)
+console.log('Supabase URL:', supabaseUrl ? `${supabaseUrl.substring(0, 20)}...` : 'MISSING');
+console.log('Supabase Key:', supabaseAnonKey ? 'Present' : 'MISSING');
+
 // Validate environment variables at startup
 if (!supabaseUrl || !supabaseAnonKey) {
   const missing = [];
